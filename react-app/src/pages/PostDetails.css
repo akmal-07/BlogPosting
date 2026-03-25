@@ -1,0 +1,234 @@
+.post-details-layout {
+    display: flex;
+    min-height: 100vh;
+    background: #fef2f2;
+}
+
+.post-details-container {
+    flex: 1;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    background: white;
+    border-left: 1px solid #fecdd3;
+    border-right: 1px solid #fecdd3;
+    min-height: 100vh;
+}
+
+.post-details-spacer {
+    flex: 1;
+    max-width: 320px;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 1px solid #fecdd3;
+    border-radius: 20px;
+    background: white;
+    color: #6b7280;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 32px;
+}
+
+.back-button:hover {
+    background: #fef2f2;
+    border-color: #fca5a5;
+    color: #dc2626;
+    transform: translateX(-4px);
+}
+
+.post-article {
+    max-width: 100%;
+}
+
+.post-header {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid #fee2e2;
+}
+
+.post-full-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin: 0 0 24px 0;
+    line-height: 1.2;
+}
+
+.post-author-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.author-avatar-large {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #b91c1c, #ef4444);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.author-details {
+    flex: 1;
+}
+
+.author-name-large {
+    font-weight: 700;
+    color: #1f2937;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.post-date-large {
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+.post-content-full {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 32px;
+}
+
+.post-content-full p {
+    margin-bottom: 1.5rem;
+}
+
+.post-content-full p:last-child {
+    margin-bottom: 0;
+}
+
+.post-actions {
+    padding-top: 24px;
+    border-top: 1px solid #fee2e2;
+    display: flex;
+    gap: 16px;
+}
+
+.like-button {
+    padding: 12px 24px;
+    border: 2px solid #fecdd3;
+    border-radius: 24px;
+    background: white;
+    color: #6b7280;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.like-button:hover {
+    background: #fef2f2;
+    border-color: #fca5a5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.15);
+}
+
+.like-button.liked {
+    background: linear-gradient(135deg, #b91c1c, #ef4444);
+    border-color: #dc2626;
+    color: white;
+}
+
+.like-button.liked:hover {
+    background: linear-gradient(135deg, #991b1b, #dc2626);
+}
+
+/* Dark Mode */
+body.dark-mode .post-details-layout {
+    background: #0a0a0a;
+}
+
+body.dark-mode .post-details-container {
+    background: #141414;
+    border-color: rgba(220, 38, 38, 0.12);
+}
+
+body.dark-mode .back-button {
+    background: #1a1a1a;
+    border-color: rgba(220, 38, 38, 0.2);
+    color: #94a3b8;
+}
+
+body.dark-mode .back-button:hover {
+    background: #2a0000;
+    border-color: #ef4444;
+    color: #fca5a5;
+}
+
+body.dark-mode .post-header {
+    border-bottom-color: rgba(220, 38, 38, 0.12);
+}
+
+body.dark-mode .post-full-title {
+    color: #f1f5f9;
+}
+
+body.dark-mode .author-name-large {
+    color: #e2e8f0;
+}
+
+body.dark-mode .post-date-large {
+    color: #94a3b8;
+}
+
+body.dark-mode .post-content-full {
+    color: #cbd5e1;
+}
+
+body.dark-mode .post-actions {
+    border-top-color: rgba(220, 38, 38, 0.12);
+}
+
+body.dark-mode .like-button {
+    background: #1a1a1a;
+    border-color: rgba(220, 38, 38, 0.2);
+    color: #94a3b8;
+}
+
+body.dark-mode .like-button.liked {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    color: white;
+}
+
+@media (max-width: 1024px) {
+    .post-details-spacer {
+        display: none;
+    }
+
+    .post-details-container {
+        border-left: none;
+        border-right: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .post-details-container {
+        padding: 24px 20px;
+    }
+
+    .post-full-title {
+        font-size: 2rem;
+    }
+
+    .post-content-full {
+        font-size: 1rem;
+    }
+}

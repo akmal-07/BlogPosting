@@ -1,0 +1,460 @@
+.create-post-layout {
+    display: flex;
+    min-height: 100vh;
+    background: #0a0a0a;
+}
+
+.create-post-container {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    background: rgba(30, 30, 30, 0.4); /* Lighter, more transparent background */
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5); /* Add depth */
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(24px); /* Stronger blur for better glass effect */
+}
+
+/* ── Hero Mesh Background ── */
+.create-hero-mesh {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%; /* Stretch across entire container for better effect */
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.mesh-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.35; /* Increased opacity to make them visible */
+    animation: floatOrb 15s ease-in-out infinite alternate;
+}
+
+.orb1 {
+    top: -50px;
+    left: -100px;
+    width: 400px; /* Larger */
+    height: 400px;
+    background: #dc2626; /* Bright red */
+}
+
+.orb2 {
+    top: 300px;
+    right: -100px;
+    width: 350px;
+    height: 350px;
+    background: #ef4444; /* Lighter red */
+    animation-delay: -5s;
+}
+
+.orb3 {
+    top: 600px;
+    left: 10%;
+    width: 300px;
+    height: 300px;
+    background: #991b1b; /* Darker red */
+    animation-delay: -10s;
+}
+
+@keyframes floatOrb {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, 40px) scale(1.1); }
+}
+
+.create-post-spacer {
+    flex: 1;
+    max-width: 320px;
+}
+
+/* ── Form Layout ── */
+.create-post-header {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.back-button-create {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    background: rgba(20, 20, 20, 0.8);
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0; /* hide word, just show icon */
+}
+
+.back-icon {
+    font-size: 1.2rem;
+}
+
+.back-button-create:hover {
+    background: #1a0000;
+    border-color: #dc2626;
+    color: #ef4444;
+    transform: translateX(-4px);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.15);
+}
+
+.create-post-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #f8fafc;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.create-post-form {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 50px;
+    align-items: start;
+}
+
+.create-post-left {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.create-post-right {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: sticky;
+    top: 80px;
+    background: rgba(20, 20, 20, 0.5);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+/* ── Typography & Inputs ── */
+.title-input-neat {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15); /* More visible border */
+    padding: 12px 0;
+    font-size: 3rem; /* Larger title */
+    font-weight: 800; /* Bolder */
+    color: #ffffff; /* Bright white text */
+    font-family: inherit;
+    transition: all 0.3s ease;
+    border-radius: 0;
+}
+
+.title-input-neat::placeholder {
+    color: #64748b; /* Brighter placeholder */
+}
+
+.title-input-neat:focus {
+    outline: none;
+    border-bottom-color: #ef4444; /* Brighter red on focus */
+    box-shadow: 0 10px 10px -10px rgba(239, 68, 68, 0.3);
+}
+
+.content-textarea-neat {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03); /* Lighter background for textarea */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Brighter border */
+    border-radius: 16px;
+    padding: 24px;
+    font-size: 1.15rem; /* Slightly larger text */
+    line-height: 1.8;
+    color: #f1f5f9; /* Near white text */
+    font-family: inherit;
+    resize: vertical;
+    min-height: 350px; /* Taller by default */
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.content-textarea-neat::placeholder {
+    color: #64748b; /* Brighter placeholder */
+}
+
+.content-textarea-neat:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #ef4444;
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15);
+}
+
+/* ── Topics/Tags ── */
+.tags-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+.form-label-neat {
+    font-weight: 600;
+    color: #f1f5f9;
+    font-size: 1.1rem;
+}
+
+.tag-hint-neat {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.tags-selector-neat {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag-pill {
+    padding: 8px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.02);
+    color: #94a3b8;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+}
+
+.tag-pill:hover {
+    background: rgba(220, 38, 38, 0.1);
+    border-color: #ef4444;
+    color: #fca5a5;
+    transform: translateY(-2px);
+}
+
+.tag-pill.selected {
+    background: linear-gradient(135deg, #b91c1c, #ef4444);
+    color: white;
+    border-color: #dc2626;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+    transform: scale(1.05);
+}
+
+/* ── Media Preview ── */
+.media-preview-grid-neat {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+}
+
+.media-preview-item-neat {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    aspect-ratio: 1;
+}
+
+.preview-media-neat {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.remove-media-btn-neat {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    color: white;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.remove-media-btn-neat:hover {
+    background: #ef4444;
+    transform: scale(1.1);
+}
+
+/* ── Attach Drop Zone ── */
+.attach-drop-zone-neat {
+    border: 2px dashed rgba(239, 68, 68, 0.4); /* Brighter red dash */
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    background: rgba(40, 10, 10, 0.4); /* Brighter base */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.attach-drop-zone-neat:hover,
+.attach-drop-zone-neat.dragging {
+    border-color: #ef4444;
+    background: rgba(239, 68, 68, 0.15); /* More visible on hover */
+    transform: scale(1.02);
+}
+
+.attach-drop-content-neat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.attach-drop-icon-neat {
+    color: #f87171; /* Brighter icon */
+    margin-bottom: 8px;
+}
+
+.attach-drop-title-neat {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.attach-drop-text-neat {
+    color: #94a3b8; /* Brighter subtitle text */
+    font-size: 0.95rem;
+}
+
+/* ── Form Actions ── */
+.form-actions-neat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Brighter divider */
+}
+
+.pin-btn-neat {
+    position: relative;
+    width: 52px; /* Slightly larger */
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.15); /* More visible border */
+    background: rgba(255, 255, 255, 0.05); /* Lighter background */
+    color: #cbd5e1; /* Brighter icon color */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.pin-btn-neat:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: #ef4444;
+    color: #fca5a5;
+    transform: translateY(-2px) rotate(-10deg);
+}
+
+.pin-btn-neat.pin-active {
+    background: rgba(220, 38, 38, 0.15);
+    border-color: #dc2626;
+    color: #ef4444;
+}
+
+.pin-badge-neat {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ef4444;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.form-actions-right-neat {
+    display: flex;
+    gap: 12px;
+}
+
+.publish-button-neat {
+    padding: 12px 32px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: linear-gradient(135deg, #b91c1c, #ef4444);
+    color: white;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+}
+
+.publish-button-neat:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(220, 38, 38, 0.4);
+    background: linear-gradient(135deg, #dc2626, #f87171);
+}
+
+.publish-button-neat:active {
+    transform: translateY(1px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .create-post-spacer {
+        display: none;
+    }
+
+    .create-post-container {
+        border-left: none;
+        border-right: none;
+        padding: 40px 30px;
+    }
+
+    .create-post-form {
+        grid-template-columns: 1fr;
+    }
+
+    .create-post-right {
+        position: static;
+        padding: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .create-post-container {
+        padding: 30px 20px;
+    }
+
+    .create-post-title {
+        font-size: 1.8rem;
+    }
+
+    .title-input-neat {
+        font-size: 2rem;
+    }
+}

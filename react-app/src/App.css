@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f5f0f0;
+  color: #1f2937;
+  overflow-y: scroll;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background: #0a0a0a;
+  color: #e2e8f0;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* ── Loading ── */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.1rem;
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* ── Scrollbar styling ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #991b1b;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dc2626;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: #7f1d1d;
+}
+
+/* ── Dark mode — shared page layouts ── */
+body.dark-mode .home-layout,
+body.dark-mode .create-post-layout,
+body.dark-mode .post-details-layout,
+body.dark-mode .my-posts-layout,
+body.dark-mode .settings-layout {
+  background: #0a0a0a;
+}
+
+body.dark-mode .main-feed,
+body.dark-mode .create-post-container,
+body.dark-mode .post-details-container,
+body.dark-mode .my-posts-feed {
+  background: #141414;
+  border-color: rgba(220, 38, 38, 0.15);
+}
+
+body.dark-mode .feed-header,
+body.dark-mode .tag-filter-bar {
+  background: rgba(20, 20, 20, 0.97);
+  border-bottom-color: rgba(220, 38, 38, 0.15);
+}
+
+body.dark-mode .feed-title {
+  color: #f1f5f9;
+}
+
+body.dark-mode .post-card {
+  background: #1a1a1a;
+  border-color: rgba(220, 38, 38, 0.1);
+}
+
+body.dark-mode .post-card:hover {
+  background: #1f1f1f;
+  border-color: rgba(220, 38, 38, 0.25);
+}
+
+body.dark-mode .post-card-title,
+body.dark-mode .post-author-name {
+  color: #e2e8f0;
+}
+
+body.dark-mode .post-date,
+body.dark-mode .stat-item {
+  color: #94a3b8;
+}
+
+body.dark-mode .post-card-content {
+  color: #cbd5e1;
+}
+
+body.dark-mode .read-more-link {
+  color: #f87171;
+}
+
+/* Dark mode — right sidebar */
+body.dark-mode .right-sidebar {
+  background: #0e0e0e;
+  border-left-color: rgba(220, 38, 38, 0.12);
+}
+
+body.dark-mode .trending-section,
+body.dark-mode .suggestions-section {
+  background: #1a1a1a;
+  border-color: rgba(220, 38, 38, 0.12);
+}
+
+body.dark-mode .trending-title,
+body.dark-mode .suggestions-title,
+body.dark-mode .trending-post-title,
+body.dark-mode .suggestion-name {
+  color: #f1f5f9;
+}
+
+body.dark-mode .trending-author,
+body.dark-mode .suggestion-handle {
+  color: #64748b;
+}
+
+/* Dark mode — create post */
+body.dark-mode .create-post-container,
+body.dark-mode .create-post-header {
+  border-color: rgba(220, 38, 38, 0.12);
+}
+
+body.dark-mode .form-label {
+  color: #cbd5e1;
+}
+
+body.dark-mode .title-input,
+body.dark-mode .content-textarea {
+  background: #111;
+  border-color: #2a2a2a;
+  color: #e2e8f0;
+}
+
+body.dark-mode .title-input:focus,
+body.dark-mode .content-textarea:focus {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2);
+}
+
+/* Dark mode — settings */
+body.dark-mode .settings-content {
+  background: #0e0e0e;
+}
+
+body.dark-mode .settings-tab {
+  color: #94a3b8;
+}
+
+body.dark-mode .settings-tab.active {
+  color: #f87171;
+}
+
+body.dark-mode .settings-section {
+  background: #1a1a1a;
+  border-color: rgba(220, 38, 38, 0.12);
+}
+
+body.dark-mode .settings-section h3 {
+  color: #f1f5f9;
+}
+
+body.dark-mode .settings-input {
+  background: #111;
+  border-color: #2a2a2a;
+  color: #e2e8f0;
+}
+
+body.dark-mode .settings-input:focus {
+  border-color: #dc2626;
+  background: #1a1a1a;
+}
+
+/* Dark mode — post details */
+body.dark-mode .back-button {
+  background: #1a1a1a;
+  border-color: rgba(220, 38, 38, 0.2);
+  color: #94a3b8;
+}
+
+body.dark-mode .post-full-title {
+  color: #f1f5f9;
+}
+
+body.dark-mode .post-content-full {
+  color: #cbd5e1;
+}
+
+body.dark-mode .author-name-large {
+  color: #e2e8f0;
+}
+
+body.dark-mode .post-date-large {
+  color: #94a3b8;
+}
+
+body.dark-mode .like-button {
+  background: #1a1a1a;
+  border-color: rgba(220, 38, 38, 0.2);
+  color: #94a3b8;
+}
+
+body.dark-mode .like-button.liked {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: white;
+}
+
+/* Dark mode — tag chips */
+body.dark-mode .tag-filter-btn {
+  background: #1a1a1a;
+  border-color: rgba(220, 38, 38, 0.2);
+  color: #94a3b8;
+}
+
+body.dark-mode .tag-filter-btn.active {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: white;
+}
+
+body.dark-mode .post-tag {
+  background: rgba(220, 38, 38, 0.1);
+  color: #f87171;
+}

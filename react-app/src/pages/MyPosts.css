@@ -1,0 +1,241 @@
+.my-posts-layout {
+    display: flex;
+    min-height: 100vh;
+    background: #fef2f2;
+}
+
+.my-posts-feed {
+    flex: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    background: white;
+    border-left: 1px solid #fecdd3;
+    border-right: 1px solid #fecdd3;
+    min-height: 100vh;
+}
+
+.my-posts-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 24px;
+    border-bottom: 1px solid #fecdd3;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(8px);
+}
+
+.my-posts-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin: 0;
+}
+
+.new-post-btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #b91c1c, #ef4444);
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.new-post-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(220, 38, 38, 0.3);
+}
+
+.empty-posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 32px;
+    text-align: center;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: 16px;
+}
+
+.empty-heading {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin: 0 0 12px;
+}
+
+.empty-sub {
+    color: #6b7280;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 360px;
+    margin: 0 0 28px;
+}
+
+.create-first-btn {
+    padding: 14px 32px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #b91c1c, #ef4444);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.create-first-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(220, 38, 38, 0.35);
+}
+
+.my-posts-list {
+    padding: 16px 0;
+}
+
+.my-post-card {
+    padding: 20px 24px;
+    border-bottom: 1px solid #fecdd3;
+    transition: background 0.2s;
+}
+
+.my-post-card:hover {
+    background: #fef2f2;
+}
+
+.my-post-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.my-post-meta {
+    flex: 1;
+}
+
+.my-post-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 4px;
+}
+
+.my-post-date {
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+
+.my-post-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.mp-action-btn {
+    padding: 6px 16px;
+    border-radius: 14px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.view-btn {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.view-btn:hover {
+    background: #fecdd3;
+}
+
+.delete-btn {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.delete-btn:hover {
+    background: #fecaca;
+}
+
+.my-post-content {
+    color: #4b5563;
+    font-size: 0.97rem;
+    line-height: 1.6;
+    margin: 0 0 12px;
+}
+
+.my-post-stats {
+    display: flex;
+    gap: 16px;
+    font-size: 0.88rem;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+/* Dark Mode */
+body.dark-mode .my-posts-layout {
+    background: #0a0a0a;
+}
+
+body.dark-mode .my-posts-feed {
+    background: #141414;
+    border-color: rgba(220, 38, 38, 0.12);
+}
+
+body.dark-mode .my-posts-header {
+    background: rgba(20, 20, 20, 0.96);
+    border-color: rgba(220, 38, 38, 0.12);
+}
+
+body.dark-mode .my-posts-title {
+    color: #f1f5f9;
+}
+
+body.dark-mode .empty-heading {
+    color: #f1f5f9;
+}
+
+body.dark-mode .empty-sub {
+    color: #94a3b8;
+}
+
+body.dark-mode .my-post-card {
+    border-color: rgba(220, 38, 38, 0.08);
+}
+
+body.dark-mode .my-post-card:hover {
+    background: #1a1a1a;
+}
+
+body.dark-mode .my-post-title {
+    color: #f1f5f9;
+}
+
+body.dark-mode .my-post-content {
+    color: #cbd5e1;
+}
+
+body.dark-mode .my-post-stats {
+    color: #64748b;
+}
+
+body.dark-mode .view-btn {
+    background: #2a0000;
+    color: #fca5a5;
+}
+
+body.dark-mode .delete-btn {
+    background: #450a0a;
+    color: #f87171;
+}
