@@ -1,7 +1,90 @@
+:root {
+    --create-bg: #f5f0f0;
+    --create-container-bg: rgba(255, 255, 255, 0.85);
+    --create-container-border: rgba(0, 0, 0, 0.1);
+    --create-shadow: rgba(0, 0, 0, 0.05);
+    --create-text: #1f2937;
+    --create-sub-text: #64748b;
+    --create-input-border: rgba(0, 0, 0, 0.2);
+    --create-input-focus: #dc2626;
+    --create-textarea-bg: rgba(0, 0, 0, 0.02);
+    --create-right-bg: #ffffff;
+    --create-right-border: rgba(0, 0, 0, 0.1);
+    --create-right-shadow: rgba(0, 0, 0, 0.08);
+    --create-pill-bg: #f8fafc;
+    --create-pill-border: #cbd5e1;
+    --create-pill-text: #475569;
+    --create-pill-hover-bg: #fee2e2;
+    --create-pill-hover-border: #fca5a5;
+    --create-pill-hover-text: #ef4444;
+    --create-title: #0f172a;
+    --create-mesh-1: rgba(220, 38, 38, 0.15);
+    --create-mesh-2: rgba(239, 68, 68, 0.1);
+    --create-mesh-3: rgba(185, 28, 28, 0.15);
+    --create-mesh-color-1: #fca5a5;
+    --create-mesh-color-2: #fecaca;
+    --create-mesh-color-3: #fee2e2;
+    --create-back-btn: #ffffff;
+    --create-back-icon: #64748b;
+    --create-back-border: #cbd5e1;
+    --create-back-hover-bg: #fee2e2;
+    --create-back-hover-border: #ef4444;
+    --create-pin-bg: #ffffff;
+    --create-pin-border: #cbd5e1;
+    --create-pin-text: #64748b;
+    --create-pin-hover-bg: #fee2e2;
+    --create-pin-hover-border: #ef4444;
+    --create-zone-border: rgba(239, 68, 68, 0.3);
+    --create-zone-bg: rgba(254, 226, 226, 0.5);
+    --create-preview-bg: #f1f5f9;
+}
+
+body.dark-mode {
+    --create-bg: #0a0a0a;
+    --create-container-bg: rgba(30, 30, 30, 0.4);
+    --create-container-border: rgba(255, 255, 255, 0.05);
+    --create-shadow: rgba(0, 0, 0, 0.5);
+    --create-text: #f1f5f9;
+    --create-sub-text: #64748b;
+    --create-input-border: rgba(255, 255, 255, 0.15);
+    --create-input-focus: #ef4444;
+    --create-textarea-bg: rgba(255, 255, 255, 0.03);
+    --create-right-bg: rgba(20, 20, 20, 0.5);
+    --create-right-border: rgba(255, 255, 255, 0.05);
+    --create-right-shadow: rgba(0,0,0,0.3);
+    --create-pill-bg: rgba(255, 255, 255, 0.02);
+    --create-pill-border: rgba(255, 255, 255, 0.08);
+    --create-pill-text: #94a3b8;
+    --create-pill-hover-bg: rgba(220, 38, 38, 0.1);
+    --create-pill-hover-border: #ef4444;
+    --create-pill-hover-text: #fca5a5;
+    --create-title: #f8fafc;
+    --create-mesh-1: rgba(220, 38, 38, 0.3);
+    --create-mesh-2: rgba(239, 68, 68, 0.2);
+    --create-mesh-3: rgba(185, 28, 28, 0.25);
+    --create-mesh-color-1: #dc2626;
+    --create-mesh-color-2: #ef4444;
+    --create-mesh-color-3: #991b1b;
+    --create-back-btn: rgba(20, 20, 20, 0.8);
+    --create-back-icon: #94a3b8;
+    --create-back-border: rgba(255, 255, 255, 0.1);
+    --create-back-hover-bg: #1a0000;
+    --create-back-hover-border: #dc2626;
+    --create-pin-bg: rgba(255, 255, 255, 0.05);
+    --create-pin-border: rgba(255, 255, 255, 0.15);
+    --create-pin-text: #cbd5e1;
+    --create-pin-hover-bg: rgba(239, 68, 68, 0.2);
+    --create-pin-hover-border: #ef4444;
+    --create-zone-border: rgba(239, 68, 68, 0.4);
+    --create-zone-bg: rgba(40, 10, 10, 0.4);
+    --create-preview-bg: #111;
+}
+
 .create-post-layout {
     display: flex;
     min-height: 100vh;
-    background: #0a0a0a;
+    background: var(--create-bg);
+    transition: background-color 0.3s ease;
 }
 
 .create-post-container {
@@ -9,14 +92,15 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 60px 40px;
-    background: rgba(30, 30, 30, 0.4); /* Lighter, more transparent background */
-    border-left: 1px solid rgba(255, 255, 255, 0.05);
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5); /* Add depth */
+    background: var(--create-container-bg);
+    border-left: 1px solid var(--create-container-border);
+    border-right: 1px solid var(--create-container-border);
+    box-shadow: 0 0 40px var(--create-shadow);
     min-height: 100vh;
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(24px); /* Stronger blur for better glass effect */
+    backdrop-filter: blur(24px);
+    transition: all 0.3s ease;
 }
 
 /* ── Hero Mesh Background ── */
@@ -25,7 +109,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 100%; /* Stretch across entire container for better effect */
+    height: 100%;
     overflow: hidden;
     pointer-events: none;
     z-index: 0;
@@ -35,16 +119,16 @@
     position: absolute;
     border-radius: 50%;
     filter: blur(90px);
-    opacity: 0.35; /* Increased opacity to make them visible */
+    opacity: 0.35;
     animation: floatOrb 15s ease-in-out infinite alternate;
 }
 
 .orb1 {
     top: -50px;
     left: -100px;
-    width: 400px; /* Larger */
+    width: 400px;
     height: 400px;
-    background: #dc2626; /* Bright red */
+    background: var(--create-mesh-color-1);
 }
 
 .orb2 {
@@ -52,7 +136,7 @@
     right: -100px;
     width: 350px;
     height: 350px;
-    background: #ef4444; /* Lighter red */
+    background: var(--create-mesh-color-2);
     animation-delay: -5s;
 }
 
@@ -61,7 +145,7 @@
     left: 10%;
     width: 300px;
     height: 300px;
-    background: #991b1b; /* Darker red */
+    background: var(--create-mesh-color-3);
     animation-delay: -10s;
 }
 
@@ -91,13 +175,13 @@
     justify-content: center;
     width: 44px;
     height: 44px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--create-back-border);
     border-radius: 50%;
-    background: rgba(20, 20, 20, 0.8);
-    color: #94a3b8;
+    background: var(--create-back-btn);
+    color: var(--create-back-icon);
     cursor: pointer;
     transition: all 0.2s ease;
-    font-size: 0; /* hide word, just show icon */
+    font-size: 0;
 }
 
 .back-icon {
@@ -105,8 +189,8 @@
 }
 
 .back-button-create:hover {
-    background: #1a0000;
-    border-color: #dc2626;
+    background: var(--create-back-hover-bg);
+    border-color: var(--create-back-hover-border);
     color: #ef4444;
     transform: translateX(-4px);
     box-shadow: 0 4px 12px rgba(220, 38, 38, 0.15);
@@ -115,9 +199,10 @@
 .create-post-title {
     font-size: 2.2rem;
     font-weight: 800;
-    color: #f8fafc;
+    color: var(--create-title);
     margin: 0;
     letter-spacing: -0.5px;
+    transition: color 0.3s ease;
 }
 
 .create-post-form {
@@ -141,11 +226,12 @@
     gap: 32px;
     position: sticky;
     top: 80px;
-    background: rgba(20, 20, 20, 0.5);
+    background: var(--create-right-bg);
     padding: 30px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    border: 1px solid var(--create-right-border);
+    box-shadow: 0 10px 40px var(--create-right-shadow);
+    transition: all 0.3s ease;
 }
 
 /* ── Typography & Inputs ── */
@@ -153,50 +239,49 @@
     width: 100%;
     background: transparent;
     border: none;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.15); /* More visible border */
+    border-bottom: 2px solid var(--create-input-border);
     padding: 12px 0;
-    font-size: 3rem; /* Larger title */
-    font-weight: 800; /* Bolder */
-    color: #ffffff; /* Bright white text */
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--create-text);
     font-family: inherit;
     transition: all 0.3s ease;
     border-radius: 0;
 }
 
 .title-input-neat::placeholder {
-    color: #64748b; /* Brighter placeholder */
+    color: var(--create-sub-text);
 }
 
 .title-input-neat:focus {
     outline: none;
-    border-bottom-color: #ef4444; /* Brighter red on focus */
+    border-bottom-color: var(--create-input-focus);
     box-shadow: 0 10px 10px -10px rgba(239, 68, 68, 0.3);
 }
 
 .content-textarea-neat {
     width: 100%;
-    background: rgba(255, 255, 255, 0.03); /* Lighter background for textarea */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Brighter border */
+    background: var(--create-textarea-bg);
+    border: 1px solid var(--create-input-border);
     border-radius: 16px;
     padding: 24px;
-    font-size: 1.15rem; /* Slightly larger text */
+    font-size: 1.15rem;
     line-height: 1.8;
-    color: #f1f5f9; /* Near white text */
+    color: var(--create-text);
     font-family: inherit;
     resize: vertical;
-    min-height: 350px; /* Taller by default */
+    min-height: 350px;
     transition: all 0.3s ease;
     box-sizing: border-box;
 }
 
 .content-textarea-neat::placeholder {
-    color: #64748b; /* Brighter placeholder */
+    color: var(--create-sub-text);
 }
 
 .content-textarea-neat:focus {
     outline: none;
-    background: rgba(255, 255, 255, 0.05);
-    border-color: #ef4444;
+    border-color: var(--create-input-focus);
     box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15);
 }
 
@@ -210,13 +295,15 @@
 
 .form-label-neat {
     font-weight: 600;
-    color: #f1f5f9;
+    color: var(--create-text);
     font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
 .tag-hint-neat {
     font-size: 0.85rem;
-    color: #64748b;
+    color: var(--create-sub-text);
+    transition: color 0.3s ease;
 }
 
 .tags-selector-neat {
@@ -227,10 +314,10 @@
 
 .tag-pill {
     padding: 8px 18px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--create-pill-border);
     border-radius: 30px;
-    background: rgba(255, 255, 255, 0.02);
-    color: #94a3b8;
+    background: var(--create-pill-bg);
+    color: var(--create-pill-text);
     font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
@@ -239,9 +326,9 @@
 }
 
 .tag-pill:hover {
-    background: rgba(220, 38, 38, 0.1);
-    border-color: #ef4444;
-    color: #fca5a5;
+    background: var(--create-pill-hover-bg);
+    border-color: var(--create-pill-hover-border);
+    color: var(--create-pill-hover-text);
     transform: translateY(-2px);
 }
 
@@ -264,8 +351,8 @@
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    background: #111;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--create-preview-bg);
+    border: 1px solid var(--create-input-border);
     aspect-ratio: 1;
 }
 
@@ -302,11 +389,11 @@
 
 /* ── Attach Drop Zone ── */
 .attach-drop-zone-neat {
-    border: 2px dashed rgba(239, 68, 68, 0.4); /* Brighter red dash */
+    border: 2px dashed var(--create-zone-border);
     border-radius: 16px;
     padding: 32px;
     text-align: center;
-    background: rgba(40, 10, 10, 0.4); /* Brighter base */
+    background: var(--create-zone-bg);
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -314,7 +401,7 @@
 .attach-drop-zone-neat:hover,
 .attach-drop-zone-neat.dragging {
     border-color: #ef4444;
-    background: rgba(239, 68, 68, 0.15); /* More visible on hover */
+    background: rgba(239, 68, 68, 0.15);
     transform: scale(1.02);
 }
 
@@ -326,18 +413,18 @@
 }
 
 .attach-drop-icon-neat {
-    color: #f87171; /* Brighter icon */
+    color: #f87171;
     margin-bottom: 8px;
 }
 
 .attach-drop-title-neat {
-    color: #ffffff;
+    color: var(--create-text);
     font-size: 1.2rem;
     font-weight: 700;
 }
 
 .attach-drop-text-neat {
-    color: #94a3b8; /* Brighter subtitle text */
+    color: var(--create-sub-text);
     font-size: 0.95rem;
 }
 
@@ -347,17 +434,17 @@
     align-items: center;
     justify-content: space-between;
     padding-top: 24px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Brighter divider */
+    border-top: 1px solid var(--create-input-border);
 }
 
 .pin-btn-neat {
     position: relative;
-    width: 52px; /* Slightly larger */
+    width: 52px;
     height: 52px;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.15); /* More visible border */
-    background: rgba(255, 255, 255, 0.05); /* Lighter background */
-    color: #cbd5e1; /* Brighter icon color */
+    border: 2px solid var(--create-pin-border);
+    background: var(--create-pin-bg);
+    color: var(--create-pin-text);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -366,9 +453,9 @@
 }
 
 .pin-btn-neat:hover {
-    background: rgba(239, 68, 68, 0.2);
-    border-color: #ef4444;
-    color: #fca5a5;
+    background: var(--create-pin-hover-bg);
+    border-color: var(--create-pin-hover-border);
+    color: #ef4444;
     transform: translateY(-2px) rotate(-10deg);
 }
 

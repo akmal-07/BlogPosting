@@ -9,6 +9,7 @@ import PostDetails from "./pages/PostDetails";
 import MyPosts from "./pages/MyPosts";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
+import ThemeToggle from "./components/ThemeToggle";
 import "./App.css";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
     <ThemeProvider>
       <Router>
         <div className="App">
+          <ThemeToggle />
           <Routes>
             <Route path="/" element={user ? <Navigate to="/home" /> : <Login_page setUser={setUser} />} />
             <Route path="/home" element={user ? <Home /> : <Navigate to="/" />} />
