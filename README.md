@@ -177,16 +177,17 @@ BlogSphere supports a global theme toggle. The selected theme is persisted in `l
 
 ---
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
 
 ## 👤 Author
 
 **GOHIT11**  
 GitHub: [@GOHIT11](https://github.com/GOHIT11)
+**akmal-07**  
+GitHub: [@akmal-07](https://github.com/akmal-07)
+**saiharshagodavarthi**  
+GitHub: [@saiharshagodavarthi](https://github.com/saiharshagodavarthi)
+**pavanguvvala**  
+GitHub: [@pavanguvvala](https://github.com/pavanguvvala)
 
 ---
 
