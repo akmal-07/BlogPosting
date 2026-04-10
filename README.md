@@ -178,17 +178,26 @@ BlogSphere supports a global theme toggle. The selected theme is persisted in `l
 ---
 
 
-## 👤 Author
 
-**GOHIT11**  
-GitHub: [@GOHIT11](https://github.com/GOHIT11)
-**akmal-07**  
-GitHub: [@akmal-07](https://github.com/akmal-07)
-**saiharshagodavarthi**  
-GitHub: [@saiharshagodavarthi](https://github.com/saiharshagodavarthi)
-**pavanguvvala**  
-GitHub: [@pavanguvvala](https://github.com/pavanguvvala)
+## 👤 Authors
+
+- **GOHIT11**  
+  GitHub: [@GOHIT11](https://github.com/GOHIT11)  
+  Role: Development 
+
+- **akmal-07**  
+  GitHub: [@akmal-07](https://github.com/akmal-07)  
+  Role: Testing, Refactoring & Documentation  
+
+- **saiharshagodavarthi**  
+  GitHub: [@saiharshagodavarthi](https://github.com/saiharshagodavarthi)  
+  Role: Project Lead  
+
+- **pavanguvvala**  
+  GitHub: [@pavanguvvala](https://github.com/pavanguvvala)  
+  Role: Development  
 
 ---
+
 
 > ⭐ If you like this project, give it a star on GitHub!
